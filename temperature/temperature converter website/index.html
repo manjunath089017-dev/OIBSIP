@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TempX | Temperature Converter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        .converter {
+            background: #ffffff;
+            width: 350px;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        .converter h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .converter input,
+        .converter select,
+        .converter button {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        .converter input:focus,
+        .converter select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .converter button {
+            background: #667eea;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .converter button:hover {
+            background: #5a67d8;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+            min-height: 24px;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="converter">
+        <h1>🌡️ TempX</h1>
+
+        <!-- Temperature Input -->
+        <input type="text" id="temperature" placeholder="Enter temperature">
+
+        <!-- Unit Selection -->
+        <select id="unit">
+            <option value="">Select unit</option>
+            <option value="celsius">Celsius (°C)</option>
+            <option value="fahrenheit">Fahrenheit (°F)</option>
+            <option value="kelvin">Kelvin (K)</option>
+        </select>
+
+        <!-- Convert Button -->
+        <button onclick="convertTemp()">Convert</button>
+
+        <!-- Result -->
+        <div class="result" id="result"></div>
+        <div class="error" id="error"></div>
+    </div>
+
+    <script>
+        function convertTemp() {
+            const tempInput = document.getElementById("temperature").value;
+            const unit = document.getElementById("unit").value;
+            const result = document.getElementById("result");
+            const error = document.getElementById("error");
+
+            result.textContent = "";
+            error.textContent = "";
+
+            // Validation
+            if (tempInput === "" || isNaN(tempInput)) {
+                error.textContent = "Please enter a valid number.";
+                return;
+            }
+
+            if (unit === "") {
+                error.textContent = "Please select a unit.";
+                return;
+            }
+
+            const temp = parseFloat(tempInput);
+            let convertedText = "";
+
+            if (unit === "celsius") {
+                const f = (temp * 9/5) + 32;
+                const k = temp + 273.15;
+                convertedText = `${f.toFixed(2)} °F | ${k.toFixed(2)} K`;
+            } 
+            else if (unit === "fahrenheit") {
+                const c = (temp - 32) * 5/9;
+                const k = c + 273.15;
+                convertedText = `${c.toFixed(2)} °C | ${k.toFixed(2)} K`;
+            } 
+            else if (unit === "kelvin") {
+                const c = temp - 273.15;
+                const f = (c * 9/5) + 32;
+                convertedText = `${c.toFixed(2)} °C | ${f.toFixed(2)} °F`;
+            }
+
+            result.textContent = convertedText;
+        }
+    </script>
+
+</body>
+</html>

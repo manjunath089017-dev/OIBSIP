@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #0f172a;
+            color: #e5e7eb;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Navbar */
+        header {
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #020617;
+        }
+
+        header h1 span {
+            color: #38bdf8;
+        }
+
+        nav a {
+            margin-left: 30px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #38bdf8;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 80px 8%;
+            gap: 40px;
+        }
+
+        .hero-text h2 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+        }
+
+        .hero-text h2 span {
+            color: #38bdf8;
+        }
+
+        .hero-text p {
+            max-width: 500px;
+            margin-bottom: 30px;
+            color: #cbd5f5;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background: #38bdf8;
+            color: #020617;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(56,189,248,0.4);
+        }
+
+        .hero img {
+            width: 280px;
+            border-radius: 50%;
+            border: 6px solid #38bdf8;
+        }
+
+        /* Section */
+        section {
+            padding: 70px 8%;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: #38bdf8;
+        }
+
+        /* Skills */
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+        }
+
+        .skill-box {
+            background: #020617;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .skill-box:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Contact */
+        .contact p {
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #020617;
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <h1>My<span>Portfolio</span></h1>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <div class="hero">
+        <div class="hero-text">
+            <h2>Hi, I'm <span>Manjunath Jayraman</span></h2>
+            <p>
+                I’m a passionate developer who loves building clean,
+                responsive websites and creative digital experiences.
+            </p>
+            <a href="#" class="btn">Download Resume</a>
+        </div>
+
+        <img src="Screenshot 2025-10-29 210121.png" alt="Profile Image">
+    </div>
+
+    <!-- About -->
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <p>
+            I am a student/developer with skills in web development,
+            UI design, and problem-solving. I enjoy learning new
+            technologies and turning ideas into reality.
+        </p>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+        <h2 class="section-title">My Skills</h2>
+        <div class="skills">
+            <div class="skill-box">HTML</div>
+            <div class="skill-box">CSS</div>
+            <div class="skill-box">JavaScript</div>
+            <div class="skill-box">C / C++</div>
+            <div class="skill-box">Python</div>
+            <div class="skill-box">UI Design</div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+        <h2 class="section-title">Contact Me</h2>
+        <p><strong>Email:</strong> yourmail@example.com</p>
+        <p><strong>Phone:</strong> +91 XXXXX XXXXX</p>
+        <p><strong>Location:</strong> India</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        © 2026 Manjunath Jayaraman | All Rights Reserved
+    </footer>
+
+</body>
+</html>
